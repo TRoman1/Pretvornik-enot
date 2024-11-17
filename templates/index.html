@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %} 
+
+<div class="container">
+    <h1>Pretvornik enot</h1>
+    <form method="POST">
+        <label for="value">Vnesite vrednost:</label>
+        <input type="number" step="0.01" name="value" id="value" placeholder="Vnesite število" required>
+
+        <label for="unit">Izberite pretvorbo:</label>
+        <select name="unit" id="unit">
+            <option value="km-to-miles">Kilometri v milje</option>
+            <option value="miles-to-km">Milje v kilometre</option>
+        </select>
+
+        <button type="submit">Pretvori</button>
+    </form>
+    {% if result %}
+        <div class="result">Rezultat: {{ result }}</div>
+    {% endif %}
+</div>
+
+{% endblock content %} 
